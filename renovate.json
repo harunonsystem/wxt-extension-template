@@ -2,19 +2,43 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":separateMajorReleases",
     "helpers:pinGitHubActionDigests"
   ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["before 4am on Monday"],
   "labels": ["dependencies"],
+  "assignees": ["harunonsystem"],
   "automerge": true,
   "automergeType": "pr",
+  "minimumReleaseAge": "3 days",
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 0,
+  "vulnerabilityAlerts": {
+    "minimumReleaseAge": "0 days",
+    "labels": ["security", "dependencies"],
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 4am on the first day of the month"],
+    "automerge": true
+  },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "description": "Major updates require manual review",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["major-update", "dependencies"]
     },
     {
-      "matchUpdateTypes": ["major"],
-      "automerge": false
+      "description": "Minor and patch updates are grouped and automerged",
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dependencies (non-major)",
+      "automerge": true
     }
   ]
 }
