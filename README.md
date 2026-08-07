@@ -1,6 +1,6 @@
 # wxt-extension-template
 
-Browser extension template built with [WXT](https://wxt.dev/) + TypeScript + Bun.
+Browser extension template built with [WXT](https://wxt.dev/) + TypeScript + pnpm.
 
 Based on the stack used in [gcal-auto-fill](https://github.com/harunonsystem/gcal-auto-fill).
 
@@ -10,7 +10,7 @@ Based on the stack used in [gcal-auto-fill](https://github.com/harunonsystem/gca
 |------|---------|
 | [WXT](https://wxt.dev/) | Extension framework (Chrome / Firefox, MV3) |
 | TypeScript | Language (strict, via WXT's generated tsconfig) |
-| [Bun](https://bun.sh/) | Package manager / script runner |
+| [pnpm](https://pnpm.io/) | Package manager / script runner |
 | [Vitest](https://vitest.dev/) | Unit testing (with `WxtVitest` plugin) |
 | [oxlint](https://oxc.rs/) | Linting |
 | [oxfmt](https://oxc.rs/) | Formatting (single quotes, no semicolons) |
@@ -22,9 +22,9 @@ Based on the stack used in [gcal-auto-fill](https://github.com/harunonsystem/gca
 2. Clone your new repo, then:
 
 ```bash
-bun install
-bun run dev          # Chrome dev mode
-bun run dev:firefox  # Firefox dev mode
+pnpm install
+pnpm run dev          # Chrome dev mode
+pnpm run dev:firefox  # Firefox dev mode
 ```
 
 ### Rename Checklist
@@ -39,15 +39,15 @@ bun run dev:firefox  # Firefox dev mode
 ## Commands
 
 ```bash
-bun run dev           # Dev server (Chrome)
-bun run build         # Production build
-bun run check         # typecheck + lint + format:check + test + build
-bun run test          # Unit tests (run once)
-bun run test:watch    # Unit tests (watch)
-bun run lint:fix      # Auto-fix lint issues
-bun run format        # Format code
-bun run zip           # Package for Chrome Web Store
-bun run zip:firefox   # Package for Firefox Add-ons
+pnpm run dev           # Dev server (Chrome)
+pnpm run build         # Production build
+pnpm run check         # typecheck + lint + format:check + test + build
+pnpm run test          # Unit tests (run once)
+pnpm run test:watch    # Unit tests (watch)
+pnpm run lint:fix      # Auto-fix lint issues
+pnpm run format        # Format code
+pnpm run zip           # Package for Chrome Web Store
+pnpm run zip:firefox   # Package for Firefox Add-ons
 ```
 
 ## Project Structure
@@ -72,7 +72,7 @@ public/
 
 ## Release Flow
 
-1. `bun run release:patch` (or `release:minor` / `release:major`)
+1. `pnpm run release:patch` (or `release:minor` / `release:major`)
    - Bumps version in `package.json`, creates a `vX.Y.Z` tag, pushes
 2. The `Release` workflow runs checks, builds zips for Chrome + Firefox, and attaches them to a GitHub Release
 
