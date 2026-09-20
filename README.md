@@ -98,4 +98,4 @@ After creating a repository from this template:
 2. Enable **Allow auto-merge** and **Allow squash merging** in repository settings.
 3. Protect `main`: require a pull request and the GitHub Actions `check` status check. Keep required approvals at zero for unattended dependency updates.
 
-GitHub does not copy App access or branch protection settings from templates. Renovate automerges non-major updates after the release-age checks and CI pass; major updates require manual review.
+GitHub does not copy App access or branch protection settings from templates. Renovate performs non-major automerges itself so pending release-age checks cannot be skipped by GitHub auto-merge; CI must also pass, and major updates require manual review.
