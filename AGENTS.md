@@ -7,7 +7,7 @@ A browser extension built with WXT + TypeScript.
 
 ## Tech Stack
 
-- **Framework**: WXT (Browser Extension Framework, MV3)
+- **Framework**: WXT (Browser Extension Framework, Chrome MV3 / Firefox MV2)
 - **Language**: TypeScript (strict)
 - **Package Manager**: pnpm
 - **Testing**: Vitest (`WxtVitest` plugin)
@@ -18,7 +18,7 @@ A browser extension built with WXT + TypeScript.
 ```bash
 pnpm run dev      # Dev server (Chrome)
 pnpm run build    # Production build
-pnpm run check    # All quality gates (typecheck + lint + format + test + build)
+pnpm run check    # All quality gates (typecheck + lint + format + test + Chrome/Firefox builds)
 pnpm run test     # Unit tests
 pnpm run zip      # Package for distribution
 ```
@@ -42,4 +42,4 @@ src/
 
 - GitHub Flow: feature branch → PR → main
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
-| - Release: `pnpm run release:patch | minor | major` → tag push triggers GitHub Release with zips |
+- Release: bump the version with `pnpm run release:patch`, `release:minor`, or `release:major`; merge the version PR; then tag the merged commit to trigger GitHub Release with zips.

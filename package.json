@@ -15,14 +15,14 @@
     "lint": "oxlint src",
     "lint:fix": "oxlint src --fix",
     "format": "oxfmt src --write",
-    "format:check": "oxfmt src",
+    "format:check": "oxfmt src --check",
     "test": "vitest run",
     "test:watch": "vitest",
     "postinstall": "wxt prepare",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run test && pnpm run build",
-    "release:patch": "npm version patch && git push --follow-tags",
-    "release:minor": "npm version minor && git push --follow-tags",
-    "release:major": "npm version major && git push --follow-tags"
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run test && pnpm run build && pnpm run build:firefox",
+    "release:patch": "npm version patch --no-git-tag-version",
+    "release:minor": "npm version minor --no-git-tag-version",
+    "release:major": "npm version major --no-git-tag-version"
   },
   "devDependencies": {
     "oxfmt": "^0.67.0",
