@@ -13,6 +13,7 @@
   "assignees": ["harunonsystem"],
   "automerge": true,
   "automergeType": "pr",
+  "platformAutomerge": false,
   "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
